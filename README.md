@@ -82,22 +82,26 @@ that format can be digested in example by 'jq' or be passed to another API tool
 
 ### How to use container version
 
-Containerized version may be easier to use in situations where you do not want to install anything    
-in the operating system but you have docker already implemented.
-From the other way it require to be built at the target system.
+Containerized version may be required in some situations in example where python is not implemented on the host system
 
+First, you have to build an image.    
 
 To build the docker image you need to pull this repository.    
 
-Change current directory to "container" subdirectory of the repository
+Change current directory to "container" subdirectory of the repository   
+where you see Dockerfile file.
 
-execute (usually as root):
-   docker build -t bright .
+execute (usually as root) command to build the image:    
+   ```docker build -t bright . ```
+
 that will create docker container tagged "bright"
 
-now you can execute the tool in the container:
+now you can execute the tool in the container:   
 
-docker run -e IPSTACK_KEY="d99d9dd999999dd9dd9d999dd9dd999" bright 1.2.3.4 json
+```docker run -e IPSTACK_KEY="d99d9dd999999dd9dd9d999dd9dd999" bright 1.2.3.4 json```
+
+
+
 
 which should produce the same output types as shell version.
 
