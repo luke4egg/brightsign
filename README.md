@@ -29,6 +29,40 @@ This approach makes container smaller therefore better prepared for production u
 Additionally, each additional library increasing the risk of security breach.
 
 
+## Building of the container
+
+To run a container first you have to build docker image.   
+I've chosen simple python default image from dockerhub which should be automatically downloaded    
+at the time of execution of the first ```docker build``` command.     
+It is expressed in the first line of Dockerfile:    
+```FROM python```
+
+The second and third lines of the Dockerfile are copying the execution script to the image   
+and making it executable
+It is expressed in lines:
+```
+COPY lukipinfo.py /lukipinfo.py
+RUN chmod +x /lukipinfo.py
+```
+The last line of Dockerfile is simpy default execution line which is expressed as:
+```
+ENTRYPOINT ["/lukipinfo.py"]
+```
+
+To build docker you need to be in the directory where Dockerfile exists    
+and execute ```docker build .``` where "dot" means use current directory for the build.    
+For convenience I've added parameter ```-t bright``` for easier use of the image.   
+
+running the container is as simple as:
+```
+docker run --rm --env IPSTACK_KEY="xxxx" bright IP_address [json]
+```
+where:
+--rm means that container should be automatically deletd after execution finished (to save space)
+--env ... is the simplest way providing variable with api key required to authenticate with API
+IP_address is the subject IP for which we want to know geolocation
+json is nice tu have feature providing output in json format as it is a basic for automation now-a-days
+
 
 
 
@@ -117,6 +151,10 @@ To keep security at higher level you should consider:
 - consider to implement https API requests instead of HTTP ones.
 
 
+
+# Cleaning after testing
+
+Pleaes consider to remote test containers and images from your system to save disk space and keep system tidy.
 
 
 
