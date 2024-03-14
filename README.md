@@ -6,8 +6,7 @@
 This this repository you can find interesting example of implementing API usage in python.    
 For the API provider I have used [IPStack API](http://api.ipstack.com).    
 
-The goal here is to have a small, convenient Linux type tool which will provide geolocation    
-information about provided IP address.
+The goal here is to have a small, convenient Linux type tool which will provide geolocation information of the provided IP address.
 
 
 ## What is in the repo?
@@ -15,6 +14,9 @@ information about provided IP address.
 The repository contains two directories:   
 - container - where you will find containarized version of the the tool
 - shell     - where you will find shell version of the tool
+
+
+Both versions are independent
 
 
 ## Implementation of the tool
