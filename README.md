@@ -47,8 +47,9 @@ When account is created you should copy "Your API Access Key" generated for you 
 
 You can use any standard Linux or MacBook shell (I used bash as a good example).    
 
-First you need to export your API key as the example:
-   export IPSTACK="d99d9dd999999dd9dd9d999dd9dd999"
+First you need to export your API key as the example:    
+
+`   export IPSTACK="d99d9dd999999dd9dd9d999dd9dd999"
 
 now, you can use the tool.
 
